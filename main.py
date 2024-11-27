@@ -1,15 +1,19 @@
-import os
-
-from flask import Flask, send_file
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 @app.route("/")
-def index():
-    return send_file('src/index.html')
+def home():
+    return "Flask Test!"
 
-def main():
-    app.run(port=int(os.environ.get('PORT', 80)))
+@app.route("/test")
+def test_route():
+    data = {
+        "name": "John Doe",
+        "age": 30,
+        "city": "New York"
+    }
+    return render_template("test.html", data=data)
 
 if __name__ == "__main__":
-    main()
+    app.run(debug=True)
