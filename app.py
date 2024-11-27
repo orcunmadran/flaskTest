@@ -16,7 +16,7 @@ def test_route():
     return render_template("test.html", data=data)
 
 @app.route("/test2")
-def test_route():
+def test2_route():
     data = {
         "name": "Orçun",
         "age": 50,
