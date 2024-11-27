@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Flask Test!"
+    return "Flask Test!<br><a href='test'>go to Test... </a>"
 
 @app.route("/test")
 def test_route():
